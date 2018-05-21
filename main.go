@@ -29,11 +29,11 @@ func renderHomePage(w http.ResponseWriter, r *http.Request) {
 
 	t, err := template.ParseFiles("index.html")
 	if err != nil {
-		log.Fatal("Tempalte parsing error", err)
+		log.Print("Tempalte parsing error", err)
 	}
 	err = t.Execute(w, HomePageVars)
 	if err != nil {
-		log.Fatal("Could not give back the respone", err)
+		log.Print("Could not give back the respone", err)
 	}
 }
 
