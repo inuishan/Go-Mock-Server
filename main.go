@@ -38,8 +38,8 @@ func renderHomePage(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	http.Handle("/ftp", http.FileServer(http.Dir("~/workspace")))
-	http.HandleFunc("/", renderHomePage)
+	http.Handle("/", http.FileServer(http.Dir(".")))
+	http.HandleFunc("/mock", renderHomePage)
 	if err := http.ListenAndServe(":8080", nil); err != nil {
 		panic(err)
 	}
